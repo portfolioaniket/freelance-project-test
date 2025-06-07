@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './application-group-master.component.css'
 })
 export class ApplicationGroupMasterComponent {
+  isModalOpen=false;
+  isSignatureModalOpen=false
  applicationGroups = [
   { groups: 'Education', name: 'Uncategorized', priority: '', action: true },
   { groups: 'Email', name: 'Uncategorized', priority: '', action: true },
@@ -23,4 +25,16 @@ showEmpty =false;
 test(){
   console.log(this.showEmpty)
 }
+ openModal(){
+    this.isModalOpen=true
+  }
+  closeModal(){
+    this.isModalOpen=false
+  }
+  openSignatureModal(){
+    this.isSignatureModalOpen=true;
+  }
+  closeSignatureModal(){
+    this.isSignatureModalOpen=false
+  }
 }

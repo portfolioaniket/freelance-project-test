@@ -55,10 +55,10 @@
     </div>
       <!-- Buttons -->
   <div class="flex gap-3 items-center">
-    <button class="bg-[#4cb2b2] text-white px-4 h-full p-2 rounded flex items-center text-sm">
+    <button class="bg-[#4cb2b2] text-white px-4 h-full p-2 rounded flex items-center text-sm" (click)="openModal()">
       <i class="fas fa-plus mr-2"></i> Add Group
     </button>
-    <button class="bg-[#4cb2b2] text-white h-full p-2 rounded flex items-center text-sm">
+    <button class="bg-[#4cb2b2] text-white h-full p-2 rounded flex items-center text-sm" (click)="openNewRuleModal()">
       <i class="fas fa-plus mr-2"></i> Add new rule
     </button>
     <button class=" w-8 h-8 hover:rounded-full hover:bg-black/20 group flex items-center justify-center text-sm">
@@ -71,3 +71,110 @@
 <div class="text-center p-6 text-[#8a8a8a] text-sm">
     There are no applications or websites to display
 </div>
+
+@if (isModalOpen) {
+    <!-- Overlay -->
+<div class="fixed inset-0 bg-black bg-opacity-50 flex items-start pt-28 pr-20 justify-end z-50">
+  <!-- Modal Container -->
+  <div class="bg-white rounded-none shadow-lg w-full max-w-sm">
+    <!-- Header -->
+    <div class="bg-[#4cb2b2] text-white text-sm px-6 py-2 text-center">
+      Add Application Group
+    </div>
+
+    <!-- Modal Content -->
+    <div class="px-4 py-2 space-y-4 text-sm">
+      <!-- Application Group -->
+      <div>
+        <!-- <label class="block text-sm text-gray-600 font-medium mb-1">
+          Application Group <span class="text-red-500">*</span>
+        </label> -->
+        <input type="text" placeholder="Application Group"
+               class="w-full border-b border-gray-300 focus:outline-none focus:border-teal-500 text-gray-700 py-1" />
+      </div>
+
+      <!-- Productivity Type -->
+      <div>
+        <label class="block text-sm text-black/50 text-[12px] mb-1">Productivity Type</label>
+        <div class="relative">
+          <select class="w-full border-b border-gray-300 appearance-none focus:outline-none focus:border-teal-500 text-black font-medium py-1 pr-6">
+            <option>Neutral</option>
+            <!-- add more options as needed -->
+          </select>
+          <div class="absolute right-0 top-1/2 -translate-y-1/2 text-gray-600 pointer-events-none pr-1">
+            ▼
+          </div>
+        </div>
+      </div>
+
+      <!-- Priority -->
+      <div>
+        <!-- <label class="block text-sm text-gray-500 font-medium mb-1">Priority</label> -->
+        <input type="text" placeholder="Priority"
+               class="w-full border-b border-gray-300 focus:outline-none focus:border-teal-500 text-gray-700 py-1" />
+      </div>
+
+      <!-- Category Name -->
+      <div>
+        <!-- <label class="block text-sm text-gray-500 font-medium mb-1">Category Name</label> -->
+        <input type="text" placeholder="Category Name"
+               class="w-full border-b border-gray-300 focus:outline-none focus:border-teal-500 text-gray-700 py-1" />
+      </div>
+
+      <!-- Actions -->
+      <div class="flex justify-center text-sm space-x-3 pt-4">
+        <button class="flex items-center bg-gray-200 text-gray-500 px-4 py-2 rounded shadow-sm cursor-not-allowed" (click)="closeModal()" disabled>
+          <i class="fas fa-check mr-2"></i> Save
+        </button>
+        <button class="flex items-center bg-white border px-4 py-2 rounded shadow-sm hover:bg-gray-100" (click)="closeModal()">
+          <i class="fas fa-times mr-2"></i> Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+}
+@if(isNewRuleModalOpen){
+  <!-- Modal Overlay -->
+<div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+  <!-- Modal Box -->
+  <div class="bg-white rounded shadow-lg w-full max-w-lg text-sm">
+    <!-- Header -->
+    <div class="bg-[#4cb2b2] text-white text-sm px-6 py-3 rounded-t flex items-center justify-center">
+      <span>Add new rule</span>
+    </div>
+
+    <!-- Body -->
+    <div class="px-6 py-4 space-y-4 text-sm">
+      <!-- Application Name -->
+      <div>
+        <!-- <label class="block text-sm text-gray-600 font-medium mb-1">
+          Application name <span class="text-red-500">*</span>
+        </label> -->
+        <input type="text" placeholder="Application Name"
+         class="w-[90%] border-b border-gray-300 focus:outline-none focus:border-teal-500 text-gray-700 py-1" /> <i class="fas fa-info-circle text-[#4cb2b2] text-lg ml-2 cursor-pointer"></i>
+      </div>
+
+      <!-- Application Group -->
+      <div>
+        <!-- <label class="block text-sm text-gray-600 font-medium mb-1">Application Group</label> -->
+        <input type="text" placeholder="Application Group"
+        class="w-[90%] border-b border-gray-300 focus:outline-none focus:border-teal-500 text-gray-700 py-1" />
+      </div>
+
+      <!-- Footer Buttons -->
+      <div class="flex justify-center text-sm space-x-3 pt-4">
+        <button class="flex items-center bg-white border px-4 py-2 rounded shadow-sm hover:bg-gray-100" (click)="closeNewRuleModal()">
+          <i class="fas fa-times mr-2"></i> Cancel
+        </button>
+        <button class="flex items-center bg-gray-200 text-gray-500 px-4 py-2 rounded shadow-sm cursor-not-allowed" (click)="closeNewRuleModal()" disabled>
+          <i class="fas fa-plus mr-2"></i> Add
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+}
+
+
+

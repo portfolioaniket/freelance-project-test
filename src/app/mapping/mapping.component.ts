@@ -8,5 +8,19 @@ import { Component } from '@angular/core';
   styleUrl: './mapping.component.css'
 })
 export class MappingComponent {
+  isModalOpen =false;
+  isNewRuleModalOpen=false;
+  openModal(){
+    this.isModalOpen=true
+  }
+  closeModal(){
+    this.isModalOpen=false
+  }
+  openNewRuleModal(){
+    this.isNewRuleModalOpen=true;
+  }
+  closeNewRuleModal(){
+    this.isNewRuleModalOpen=false
+  }
 
 }

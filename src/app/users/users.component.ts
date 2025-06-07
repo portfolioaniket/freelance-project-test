@@ -1,9 +1,10 @@
+import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-users',
   standalone: true,
-  imports: [],
+  imports: [NgIf],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css'
 })
@@ -42,5 +43,12 @@ export class UsersComponent {
       "user 20 20",
       "user 11 11"
     ];
+  isEditingGroup=false
+  openModal(){
+    this.isEditingGroup=true
+  }
+  closeModal(){
+    this.isEditingGroup=false
+  }
 
 }

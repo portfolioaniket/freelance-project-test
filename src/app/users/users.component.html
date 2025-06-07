@@ -18,7 +18,7 @@
           <td class="p-3">
             <div class="relative group">
               <!-- Edit Icon -->
-              <button class="text-teal-500 hover:text-teal-600">
+              <button class="text-teal-500 hover:text-teal-600" (click)="openModal()">
                 <i
                   class="fas fa-pen-to-square text-teal-500 text-[15px] font-semibold hover:text-teal-600 cursor-pointer"></i>
               </button>
@@ -77,3 +77,31 @@
     </button>
   </div>
 </div>
+
+<ng-container *ngIf="isEditingGroup">
+ <!-- Overlay -->
+<div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+  <!-- Modal -->
+
+<div class="flex-column bg-white">
+    <div class="bg-[#4cb2b2] text-white py-2 px-32 mb-5">
+        <h5 class="text-sm">Edit Team Productivity profie</h5>
+    </div>
+    <div class="px-10 pb-4">
+        <label for="" class="text-sm text-black/50 w-full">Productivity profile name <span class="text-red-500/60">*</span></label>
+        <select name="" id="" class="w-full border p-2">
+            <option value="">
+                Default
+            </option>
+            <option value="">Abc</option>
+        </select>
+    </div>
+    <div class="flex items-center justify-center pb-2 gap-2">
+        <button class="bg-white border shadow p-1.5 px-4 text-sm" (click)="closeModal()" ><i class="fas fa-times mr-1 text-sm text-black/50"></i> Cancel</button>
+        <button class="bg-[#4cb2b2] shadow text-white px-4 p-0.5 text-sm" (click)="closeModal()"><i class="fas fa-save text-lg"></i>
+ Save</button>
+    </div>
+</div>
+</div>
+
+</ng-container>
