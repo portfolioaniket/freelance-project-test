@@ -1,0 +1,73 @@
+<div class="flex flex-wrap items-center justify-between gap-4 p-4 border-b-[1px]">
+  <!-- Search Box -->
+  <div class="w-1/6">
+    <input
+      type="text"
+      placeholder="Search"
+      class="border border-[#d0cacadb] caret-[#4cb2b2] rounded focus:outline-none w-full px-4 py-2 text-sm placeholder-gray-400"
+    />
+  </div>
+
+  <!-- Filters Group -->
+  <div class="flex flex-wrap gap-4 items-center">
+    <!-- Is App -->
+    <div class="relative w-36">
+      <label class="absolute -top-2 left-2 bg-white px-1 text-[11px] text-gray-500">Is App</label>
+      <select class="w-full border rounded px-3 py-[8px] pr-8 text-[12px] appearance-none focus:outline-none">
+        <option>Show All</option>
+      </select>
+      <div class="pointer-events-none absolute inset-y-0 right-2 flex items-center text-gray-500">
+        <i class="fas fa-caret-down text-sm"></i>
+      </div>
+    </div>
+
+    <!-- Group Config -->
+    <div class="relative w-40">
+      <label class="absolute -top-2 left-2 bg-white px-1 text-[11px] text-gray-500">Group Config</label>
+      <select class="w-full border rounded px-3 py-[8px] pr-8 text-[12px] appearance-none focus:outline-none">
+        <option>ALL</option>
+      </select>
+      <div class="pointer-events-none absolute inset-y-0 right-2 flex items-center text-gray-500">
+        <i class="fas fa-caret-down text-sm"></i>
+      </div>
+    </div>
+
+    <!-- Application Group -->
+    <div class="relative w-48">
+      <label class="absolute -top-2 left-2 bg-white px-1 text-[11px] text-gray-500">Application Group</label>
+      <select class="w-full border rounded px-3 py-[8px] pr-8 text-[12px] appearance-none focus:outline-none">
+        <option>All</option>
+      </select>
+      <div class="pointer-events-none absolute inset-y-0 right-2 flex items-center text-gray-500">
+        <i class="fas fa-caret-down text-sm"></i>
+      </div>
+    </div>
+
+    <!-- Regular Expression -->
+    <div class="relative w-48">
+      <label class="absolute -top-2 left-2 bg-white px-1 text-[11px] text-gray-500">Regular Expression</label>
+      <select class="w-full border rounded px-3 py-[8px] pr-8 text-[12px] appearance-none focus:outline-none">
+        <option>All</option>
+      </select>
+      <div class="pointer-events-none absolute inset-y-0 right-2 flex items-center text-gray-500">
+        <i class="fas fa-caret-down text-sm"></i>
+      </div>
+    </div>
+      <!-- Buttons -->
+  <div class="flex gap-3 items-center">
+    <button class="bg-[#4cb2b2] text-white px-4 h-full p-2 rounded flex items-center text-sm">
+      <i class="fas fa-plus mr-2"></i> Add Group
+    </button>
+    <button class="bg-[#4cb2b2] text-white h-full p-2 rounded flex items-center text-sm">
+      <i class="fas fa-plus mr-2"></i> Add new rule
+    </button>
+    <button class=" w-8 h-8 hover:rounded-full hover:bg-black/20 group flex items-center justify-center text-sm">
+      <span><i class="fas fa-ellipsis-h group-hover:hover:text-[#4cb2b2] text-gray-500 text-lg cursor-pointer"></i></span>
+    </button>
+  </div>
+  </div>
+</div>
+
+<div class="text-center p-6 text-[#8a8a8a] text-sm">
+    There are no applications or websites to display
+</div>

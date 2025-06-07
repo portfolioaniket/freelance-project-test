@@ -1,0 +1,34 @@
+<div class="flex h-screen font-poppins shadow-lg">
+  <!-- Sidebar -->
+  <div class="w-1/4 bg-white shadow p-4">
+    <div class="flex justify-center items-center pb-4 border-b-[#00000026] border-b-[1px]">
+        <button class="bg-black/5 rounded-l-md border border-[#d9d9d9] p-1.5 px-3"><i class="fas fa-search text-gray-500 text-lg"></i></button>
+   <input type="text" placeholder="Search" class="w-3/4 p-2 border border-[#d9d9d9] focus: outline-none" />
+   <button class="bg-[#4cb2b2] rounded-r-md border border-transparent p-1.5 px-3"><i class="fas fa-plus text-white text-lg"></i></button>
+    </div>
+    <div class="font-semibold bg-[#f6f8f8] p-3 border-b-[#00000026] border-b-2 text-[#4cb2b2]">Default <i class="fas fa-info-circle text-base ml-2 cursor-pointer"></i>
+</div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="w-3/4 p-4">
+    <!-- Sub Tabs -->
+    <div class="flex border-b-[rgba(76,178,178,0.3)] text-[14px] border-b-2 mb-1 text-[#707070] hover:cursor-pointer">
+      <div [ngClass]="{'border-b-2 border-teal-500 text-[#4cb2b2]': selectedTab=='Application'}" class=" w-1/6  text-center pb-2 px-3 cursor-pointer" (click)="setTab('Application')">Application Groups</div>
+      <div [ngClass]="{'border-b-2 border-teal-500 text-[#4cb2b2]': selectedTab=='Teams'}" class=" w-1/6  text-center pb-2 px-3 cursor-pointer" (click)="setTab('Teams')">Teams</div>
+      <div [ngClass]="{'border-b-2 border-teal-500 text-[#4cb2b2]': selectedTab=='Users'}" class=" w-1/6  text-center pb-2 px-3 cursor-pointer" (click)="setTab('Users')">Users</div>
+      <!-- <input type="text" class="rounded border" placeholder="Search"> -->
+        <!-- Search + Table -->
+
+    </div>
+    @if(selectedTab=='Application'){
+      <app-application-groups></app-application-groups>
+    }
+    @else if (selectedTab=='Teams') {
+      <app-teams></app-teams>
+    }
+    @else {
+      <app-users></app-users>
+    }
+  </div>
+</div>
