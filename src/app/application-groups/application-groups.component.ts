@@ -14,7 +14,7 @@ export class ApplicationGroupsComponent {
   searchText =''
     applicationGroups = [
     { name: 'Education', isProductive: false, isNonProductive: true },
-    { name: 'Emails', isProductive: false, isNonProductive: false },
+    { name: 'Email', isProductive: false, isNonProductive: false },
     { name: 'Entertainment', isProductive: false, isNonProductive: false },
     { name: 'Marketing', isProductive: false, isNonProductive: false },
     { name: 'News', isProductive: false, isNonProductive: false },
